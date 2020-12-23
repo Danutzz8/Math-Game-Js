@@ -1,0 +1,57 @@
+.boxes {
+    display: flex;
+    width: 100%;
+}
+
+.progress {
+    border: 1px solid #c7c7c7;
+    border-right: none;
+    position: relative;
+}
+
+.progress-inner {
+    background-color: #7ecc00;
+    /* padding: 2em; */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    opacity: .6;
+    transform: scaleX(0);
+    transform-origin: center left;
+    transition: transform .4s ease-out;
+}
+
+.box {
+    height: 50px;
+    border-right: 1px solid #c7c7c7 ;
+    flex: 1;
+}
+
+/* this is the finnish game background */
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(255,255,255, .8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .33s ease-out;
+    transform: scale(1.2);
+}
+
+body.overlay-is-open .overlay {
+opacity: 1;
+visibility: visible;
+transform: scale(1);
+}
+
+body.overlay-is-open .main-ui {
+    filter: blur(3px);
+}
