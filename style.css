@@ -1,3 +1,8 @@
+body {
+    background-image: radial-gradient( circle farthest-corner at 5.6% 54.5%,  rgba(47,71,79,1) 0%, rgba(159,188,198,1) 83.6% );
+}
+
+
 .boxes {
     display: flex;
     width: 100%;
@@ -7,6 +12,49 @@
     border: 1px solid #c7c7c7;
     border-right: none;
     position: relative;
+}
+
+.problem {
+    text-align: center;
+    font-size: 3rem;
+}
+
+.our-form {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.button {
+    width: 6em;
+    background-color: rgba(35, 173, 211, 0.781);
+}
+
+.button:hover{
+    background-color: rgba(144, 189, 202, 0.781);
+}
+
+.our-field {
+    margin-right: 1em;
+    padding: .3em;
+    font-size: 1rem;
+    background-color:rgba(144, 189, 202, 0.781);
+}
+
+.status {
+    text-align: center;
+    margin: 2em;
+    font-size: 1.3rem;
+    
+}
+
+.end-message {
+    text-align: center;
+}
+
+.reset-btn {
+    margin: 2.5em;
+    padding: .6em;
 }
 
 .progress-inner {
@@ -54,4 +102,20 @@ transform: scale(1);
 
 body.overlay-is-open .main-ui {
     filter: blur(3px);
+}
+
+@keyframes showError {
+    50% {
+        color: red;
+        transform: scale(1.2);
+    }
+
+    100% {
+        color: #333;
+        transform: scale(1);
+    }
+}
+
+.animate-wrong {
+    animation: .40s showError;
 }

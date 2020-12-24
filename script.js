@@ -42,7 +42,7 @@ function handleSubmit(e) {
     e.preventDefault() // to prevent default behaviour for submit
 
     let correctAnswer
-    const problem = state.currentProblem  // asigning a cariable so that is shorter
+    const problem = state.currentProblem  // asigning a variable to be shorter down the line
     if (problem.operator == '+') correctAnswer = problem.numberOne + problem.numberTwo
     if (problem.operator == '-') correctAnswer = problem.numberOne - problem.numberTwo
     if (problem.operator == 'x') correctAnswer = problem.numberOne * problem.numberTwo
@@ -58,6 +58,8 @@ function handleSubmit(e) {
         state.wrongAnswers++
        // alert('wrong')
        mistakesAllowed.textContent = 2 - state.wrongAnswers;
+       problemElement.classList.add('animate-wrong');
+       setTimeout(() => problemElement.classList.remove('animate-wrong') ,450)
     }
     checkLogic()
 }
@@ -71,7 +73,7 @@ function checkLogic() {
     } 
     // if you lost
     if(state.wrongAnswers === 3) {
-        endMessage.textContent = 'Sorry!, You Lost.' 
+        endMessage.textContent = 'Sorry! You Lost.' 
         document.body.classList.add('overlay-is-open')
         setTimeout(() => resetBtn.focus(), 300)
        
